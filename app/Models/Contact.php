@@ -2,10 +2,28 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Traits\Relationships\ContactsRelationships;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
+
+/**
+ *
+ * @mixin Builder
+ *
+ * Plain Fields
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $surname
+ * @property string $address
+ *
+ * Relationships
+ * @property Profile $profiles
+ */
 class Contact extends Model
 {
-    use HasFactory;
+    protected $connection = 'oa_laravel_training_one';
+
+    use ContactsRelationships;
 }

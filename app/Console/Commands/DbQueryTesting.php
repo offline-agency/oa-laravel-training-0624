@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Models\User;
+use App\Models\Contact;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 
@@ -14,7 +14,7 @@ class DbQueryTesting extends command
 
     public function handle(){
 
-        $results = User::first()->profile;
+        $results = Contact::first()->profile;
 
     dd($results);
 

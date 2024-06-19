@@ -14,11 +14,11 @@ return new class extends Migration
             $table->id();
             $table->string('description');
 
-            $table->unsignedBigInteger('user_id');
-            $table->index('user_id');
-            $table->foreign('user_id')
+            $table->unsignedBigInteger('contact_id');
+            $table->index('contact_id');
+            $table->foreign('contact_id')
                 ->references('id')
-                ->on('oa_laravel_training_one.users');
+                ->on('oa_laravel_training_one.contacts');
 
 
             $table->timestamps();

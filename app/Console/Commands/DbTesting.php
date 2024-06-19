@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\Repositories\Contracts\ContactRepositoryInterface;
 use Illuminate\Console\Command;
-use App\Repositories\Contracts\UsersRepositoryInterface;
 use App\Repositories\Contracts\ProfileRepositoryInterface;
 
 class DbTesting extends command
@@ -13,26 +13,26 @@ class DbTesting extends command
     protected $description = 'fill db';
 
     protected ProfileRepositoryInterface $profileRepository;
-    protected UsersRepositoryInterface $usersRepository;
+    protected ContactRepositoryInterface $contactRepository;
 
     public function handle(
-        UsersRepositoryInterface   $usersRepository,
+        ContactRepositoryInterface   $contactRepository,
         ProfileRepositoryInterface $profileRepository
     )
     {
-        $this->usersRepository = $usersRepository;
+        $this->contactRepository = $contactRepository;
         $this->profileRepository = $profileRepository;
 
-        $db_user = $this->usersRepository->store([
+        $db_contact = $this->contactRepository->store([
             'name' => 'jhon',
             'surname' => 'doe',
             'address' => '123 roma centro'
         ]);
-        $user_id = $db_user->id;
+        $contact_id = $db_contact->id;
 
         $db_profile = $this->profileRepository->store([
             'description' => 'vive a roma e si chiama jhon doe',
-            'user_id' => $user_id,
+            'contact_id' => $contact_id,
         ]);
     }
 }

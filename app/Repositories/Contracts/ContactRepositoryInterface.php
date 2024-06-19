@@ -2,14 +2,12 @@
 
 namespace App\Repositories\Contracts;
 
+use App\Models\Contact;
+
 interface ContactRepositoryInterface
 {
     public function store(
         array $contact
-    );
+    ): Contact;
 
-    public function update(
-        int $contact_id,
-        array $contact
-    );
 }

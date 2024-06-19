@@ -5,7 +5,7 @@ namespace App\Traits\Relationships;
 use App\Models\Profile;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-trait UsersRelationships
+trait ContactsRelationships
 {
     public function profile(): HasOne
     {
