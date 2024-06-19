@@ -26,10 +26,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/",
-            "files": [
-                "app/Utils/helpers.php"
-            ]
+            "Tests\\": "tests/"
         }
     },
     "scripts": {
