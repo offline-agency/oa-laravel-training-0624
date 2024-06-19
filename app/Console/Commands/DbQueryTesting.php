@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 
@@ -13,11 +14,7 @@ class DbQueryTesting extends command
 
     public function handle(){
 
-
-    $results = DB::table('oa_laravel_training_one.users as u')
-        ->join('oa_laravel_training_two.profiles as p', 'u.id', '=', 'p.user_id')
-        ->select('p.*', 'u.*')
-        ->get();
+        $results = User::first()->profile;
 
     dd($results);
 

@@ -2,13 +2,13 @@
 
 namespace App\Traits\Relationships;
 
-use App\Models\Users;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 trait ProfileRelationships
 {
-    public function profile(): HasOne
+    public function user(): HasOne
     {
-        return $this->hasOne(Users::class);
+        return $this->hasOne(User::class);
     }
 }

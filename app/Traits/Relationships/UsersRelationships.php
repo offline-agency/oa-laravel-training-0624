@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 trait UsersRelationships
 {
-    public function users(): HasOne
+    public function profile(): HasOne
     {
         return $this->hasOne(Profile::class);
     }

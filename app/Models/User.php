@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Traits\Relationships\UsersRelationships;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 
 
 /**
@@ -20,11 +21,9 @@ use Illuminate\Database\Eloquent\Builder;
  * Relationships
  * @property Profile $profiles
  */
-class Users extends OaModel
+class User extends Model
 {
     protected $connection = 'oa_laravel_training_one';
 
     use UsersRelationships;
-
-    protected $table = 'users';
 }
