@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Repositories\ContactRepository;
+use App\Repositories\ContactRepositoryV2;
 use App\Repositories\Contracts\ContactRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
@@ -13,7 +13,7 @@ class RepositoriesServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(ContactRepositoryInterface::class, ContactRepository::class);
+        $this->app->bind(ContactRepositoryInterface::class, ContactRepositoryV2::class);
     }
 
     /**

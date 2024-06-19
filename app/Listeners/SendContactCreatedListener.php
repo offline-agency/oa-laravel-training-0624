@@ -4,8 +4,9 @@ namespace App\Listeners;
 
 use App\Events\ContactCreated;
 use App\Models\User;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
-class SendContactCreatedListener
+class SendContactCreatedListener implements ShouldQueue
 {
     public function __construct()
     {

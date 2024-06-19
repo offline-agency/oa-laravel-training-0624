@@ -2,7 +2,10 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Contact;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\App;
+use Psr\SimpleCache\InvalidArgumentException;
 
 class LaravelTraining extends Command
 {
@@ -12,6 +15,6 @@ class LaravelTraining extends Command
 
     public function handle()
     {
-        //
+        config('app.env');
     }
 }
