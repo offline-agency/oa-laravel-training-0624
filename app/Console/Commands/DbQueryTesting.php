@@ -4,19 +4,19 @@ namespace App\Console\Commands;
 
 use App\Models\Contact;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\DB;
 
 class DbQueryTesting extends command
-
 {
     protected $signature = 'db:join';
+
     protected $description = 'db join query';
 
-    public function handle(){
+    public function handle()
+    {
+        $contact = Contact::with([
+            'profile'
+        ])->where('id', 1)->first();
 
-        $results = Contact::first()->profile;
-
-    dd($results);
-
-}
+        dd($contact->toArray());
+    }
 }
