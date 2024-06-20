@@ -13,9 +13,11 @@ class DbQueryTesting extends command
     protected $description = 'db join query';
 
     public function handle(){
-
+        //different ways to
         $results = Contact::first()->profile;
 
+
+        $results = Contact::with('profile')->first();
     dd($results);
 
 }

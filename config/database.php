@@ -36,22 +36,18 @@ return [
             'host' => env('DB_ONE_HOST', '127.0.0.1'),
             'port' => env('DB_ONE_PORT', '3306'),
             'database' => env('DB_ONE_DATABASE', 'oa_laravel_training_one'),
-            'username' => env('DB_ONE_USERNAME', 'root'),
+            'username' => env('DB_ONE_USERNAME', ''),
             'password' => env('DB_ONE_PASSWORD', ''),
-
         ],
 
         'oa_laravel_training_two' => [
             'driver' => 'mysql',
             'host' => env('DB_TWO_HOST', '127.0.0.1'),
-            'port' => env('DB_TWO_PORT', '3306'),
+            'port' => env('DB_TWO_PORT', '3308'),
             'database' => env('DB_TWO_DATABASE', 'oa_laravel_training_two'),
-            'username' => env('DB_TWO_USERNAME', 'root'),
+            'username' => env('DB_TWO_USERNAME', ''),
             'password' => env('DB_TWO_PASSWORD', ''),
-
         ],
-
-        // Other connections if any...
 
         /*
         |--------------------------------------------------------------------------
