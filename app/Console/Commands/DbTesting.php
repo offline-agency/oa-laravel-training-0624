@@ -8,15 +8,15 @@ use App\Repositories\Contracts\ProfileRepositoryInterface;
 
 class DbTesting extends command
 {
-    protected $signature = 'db:fill';
 
+    protected $signature = 'db:fill';
     protected $description = 'fill db';
 
     protected ProfileRepositoryInterface $profileRepository;
     protected ContactRepositoryInterface $contactRepository;
 
     public function handle(
-        ContactRepositoryInterface $contactRepository,
+        ContactRepositoryInterface   $contactRepository,
         ProfileRepositoryInterface $profileRepository
     )
     {
@@ -28,10 +28,11 @@ class DbTesting extends command
             'surname' => 'doe',
             'address' => '123 roma centro'
         ]);
+        $contact_id = $db_contact->id;
 
         $db_profile = $this->profileRepository->store([
             'description' => 'vive a roma e si chiama jhon doe',
-            'contact_id' => $db_contact->id
+            'contact_id' => $contact_id,
         ]);
     }
 }
