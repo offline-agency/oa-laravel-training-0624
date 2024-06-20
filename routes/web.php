@@ -9,4 +9,6 @@ Route::get('/', function () {
 
 Route::group(['as' => 'contact.', 'prefix' => 'contact', 'namespace' => 'Contact'], function () {
     Route::get('/list', [ContactsController::class, 'list'])->name('list');
+    Route::get('/detail/{id}', [ContactsController::class, 'detail'])->name('detail');
+    Route::get('/{id}', [ContactsController::class, 'list'])->name('list');
 });

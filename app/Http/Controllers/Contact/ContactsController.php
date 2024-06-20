@@ -36,6 +36,25 @@ class ContactsController extends Controller
         }
     }
 
+    public function detail(
+        string $id
+    ): JsonResponse
+    {
+        try {
+            $contact = Contact::where('id', $id)->first();
+
+            return response()->json([
+                'message' => 'Contact loaded successfully',
+                'contact' => $contact
+            ]);
+        } catch (Exception $exception) {
+            return response()->json([
+                'message' => $exception->getMessage(),
+                'contacts' => []
+            ], 400);
+        }
+    }
+
     public function store(
         ContactStoreRequest $request
     ): JsonResponse
